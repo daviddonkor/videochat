@@ -59,10 +59,61 @@ export const getIncomingCallDialog = (
     dialogContent.appendChild(imageContainer);
     dialogContent.appendChild(buttonContainer);
 
-    // const dialogel=document.getElementById('dialog');
-    // dialogel.append(dialog);
+   
+    //Adding Event Listeners to listen to emitted events
+    acceptButton.addEventListener("click", () =>{
+        acceptCallHandler();
+    });
+    rejectButton.addEventListener("click", () =>{
+        rejectCallHandler();
+    });
 
+    //Returns the built dialog container
    return dialog; 
 
 
-}
+};
+
+export const getCallingDialog = () => {
+    const dialog  = document.createElement('div');
+    dialog.classList.add("dialog_wrapper");
+
+    const dialogContent = document.createElement("div");
+    dialogContent.classList.add("dialog_content");
+    dialog.appendChild(dialogContent);
+
+    const title = document.createElement("p");
+    title.classList.add("dialog_title");
+    title.innerHTML = `Calling ...`;
+
+    const imageContainer = document.createElement("div");
+    imageContainer.classList.add("dialog_image_container");
+    const image = document.createElement("img");
+    image.src = "./img/dialogAvatar.png";
+    imageContainer.appendChild(image);
+
+     //Button Container
+     const buttonContainer = document.createElement("div");
+     buttonContainer.classList.add("dialog_button_container");
+
+     // Create hangUp Button
+    const hangUpButton = document.createElement("button");
+    hangUpButton.classList.add("dialog_reject_call_button");
+    hangUpButton.classList.add("btn");
+    hangUpButton.classList.add("btn-danger");
+
+    //Add image to hangUp button
+    const hangUpImage = document.createElement("img");
+    const hangUpImagePath = "./img/hangUp.png";
+    hangUpImage.src = hangUpImagePath;
+    hangUpButton.append(hangUpImage);
+    hangUpButton.appendChild(hangUpImage);
+
+   //Adding it all up
+    buttonContainer.appendChild(hangUpButton);
+    dialogContent.appendChild(title);
+    dialogContent.appendChild(imageContainer);
+    dialogContent.appendChild(buttonContainer);
+
+    return dialog;
+};

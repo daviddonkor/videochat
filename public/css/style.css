@@ -290,3 +290,8 @@ width:70%;
 margin:auto;
 
 }
+
+.dialog_reject_call_button{
+    position: relative;
+    margin:auto;
+}
