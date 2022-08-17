@@ -1,0 +1,292 @@
+* {
+    padding:0px;
+    margin:0px;
+    border:0px;
+}
+#blue{
+    
+    background-image: url("/utils/images/bg.png") ;
+    background-repeat: repeat-x;
+    background-color:rgb(44, 122, 240);
+    color:#fff;
+   flex:2;
+   padding:60px;
+
+}
+
+#video_frame{
+    background: #eee;
+    flex:5;
+}
+
+.tainer{
+    min-height:500px;
+}
+.blue-font{
+    color:#aed0fc
+}
+.personalcode{
+    background:rgb(73 140 241);
+    padding:10px;
+}
+
+.rounded-border{
+    border-radius:10px
+}
+.btn-white{
+    background:#fff !important;
+
+}
+
+.orange{
+    color:orange !important;
+}
+.bform-control{
+    background: rgb(73 140 241) !important;
+    border:1px solid rgb(68, 138, 243) !important;
+    color:#fff !important;
+}
+.checkbox_connection{
+width:30px;
+    height:30px;
+    background:rgba(196,196,196,0.2);
+    border: 1px solid rgba(255,255,255,0.2);
+    border-radius: 8px;
+    backdrop-filter: blur(80px);
+    display:flex;
+    align-items: center;
+    justify-content:center;
+}
+.checkbox_container_paragraph
+{
+    font-weight: 500;
+    font-size: 16px;
+    position:relative;
+
+    margin-left: 15px;
+}
+
+.appcontainer{
+    padding: 0px;
+    height:100vh;
+    display:flex;
+   justify-content:space-between;
+   flex-wrap:wrap;
+
+}
+
+.checkbox_container {
+    position:relative;
+    top:100px;
+}
+.sectionview{
+    min-width: 400px;
+}
+
+.crow{
+    display:flex;
+    justify-content:space-between;
+}
+.f-row{
+    display:flex;
+}
+.btn{
+    border-radius: 1.65rem !important;
+}
+#connection_checkbox {
+    width:30px;
+    height:30px;
+    backdrop-filter: blur(80px);
+    background:red;
+}
+.stateblur{
+    width:30%;
+    height:100vh;
+    position:absolute;
+    background:rgba(20,20,20,0.02);
+    backdrop-filter: blur(80px);
+    opacity: 0.2;
+    left:-50px;
+    z-index: 99;
+    top:0px;
+}
+.hide{
+    display:none !important;
+}
+.video_placeholder{
+    background:rgb(82, 163, 255);
+   
+    height:100%;
+    position:absolute;
+}
+.videos_container{
+    width:100%;
+}
+.local_preview_box
+{
+    width:200px;
+    height:200px;
+    position:absolute;
+    border:1px solid rgb(44, 122, 240,0.4);
+    background:rgb(44, 122, 240,0.2);
+    margin:40px;
+    top:0px;
+    z-index: 100;
+    border-radius:12px;
+}
+#chat_area{
+   background:#072b5c;
+   flex: 3;
+   padding:40px;
+}
+.call_button_container{
+    display:flex;
+    justify-content:space-between;
+}
+.remote_video{
+    width:100%;
+    height:100%;
+background:#215191
+}
+.call_button_container{
+    width:70%;
+    position: relative;
+    margin:auto;
+    top:-100px;
+}
+.call_button_small
+{
+    border-radius: 10px;
+    width: 40px;
+    height: 40px;
+    background: transparent;
+    border: 1px solid #eee;
+}
+#hung_up_button{
+    border-radius: 40px;
+    width: 60px;
+    height: 60px;
+    background:red;
+}
+.end_chat_button_container{
+    width:50%;
+    position: relative;
+    margin:auto;
+    top:-100px;
+    display:flex;
+    justify-content:center;
+}
+
+.video_recording_bottom
+{
+    width:auto;
+    height:50px;
+    position:absolute;
+    border:1px solid rgb(44, 122, 240,0.4);
+    background:rgb(44, 122, 240,0.2);
+    margin:50px;
+    z-index: 99;
+    border-radius:12px;
+    left:45%;
+    padding:10px;
+}
+
+.recording_button_small
+{
+    border-radius: 10px;
+    width: 30px;
+    height: 30px;
+    background: transparent;
+    border: 1px solid #eee;
+ 
+}
+.btn_stop_recording{
+    padding:10px;
+    background:rgb(14 74 153);
+    border-radius: 12px;
+    color:#eee !important;
+    line-height: 8px;
+}
+.message_container{
+    width:100%;
+    height:90%;
+    background:rgb(245, 218, 218);
+
+
+}
+.new_message_container{
+    width: 100%;
+    padding:5px;
+    display:flex;
+
+}
+.new_message_button{
+    width:50px;
+    background:rgb(14 74 153);
+}
+
+.videobutton{
+    width:80%;
+}
+
+.dialog_wrapper {
+    position:fixed;
+    height:100%;
+    width:100%;
+    display:flex;
+    top:0px;
+    left:0px;
+    backdrop-filter: blur(30px);
+    align-items: center;
+    justify-content:center;
+    background:rgba (255,255,255,0.2);
+    z-index:999
+}
+.dialog_content{
+    width:400px;height:400px;
+    background:#fff;
+    border-radius:12px;
+    position :relative;
+    margin: auto;
+ 
+}
+
+.dialog_title{
+    color:black;
+    text-align:center;
+    font-size:1.5em;
+    position:relative;
+    top:20px;
+ 
+}
+
+.dialog_image_container{
+    text-align:center;
+    align-items:center;
+    padding:10px;
+    background:#072b5c;
+    border-radius: 120px;
+    width:200px;
+    height:200px;
+    position:relative;
+    margin:auto;
+    margin-top: 50px;
+    margin-bottom:50px;
+}
+
+.dialog_image_container img {
+    width:120px;
+    height:auto;
+    position:relative
+    ;
+    top:30px;
+}
+
+.dialog_button_container {
+    display:flex;
+    position:relative;
+    justify-content:space-between;
+width:70%;
+margin:auto;
+
+}

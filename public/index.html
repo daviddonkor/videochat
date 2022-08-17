@@ -1,0 +1,170 @@
+<html>
+    <head>
+        <title>This mis from meet Strangers</title>
+  
+        <link rel="stylesheet" href="./css/style.css"  />
+        <link rel="stylesheet" href="/css/bootstrap.min.css"  />
+        <link rel="stylesheet" href="/css/bootstrap-icons.css"  />
+    </head>
+    <body>
+        <section class="blue appcontainer">
+       
+            
+            <section class="sectionview " id="blue">
+                
+                <div class="stateblur hide"></div>
+                <div class="imgcontainer f-row justify-content-center" style="">
+                    <img src="/utils/images/logo.png"/>
+                </div>
+                <br />
+                <br />
+      
+           <p class="blue-font">
+                Chat with others users by pasting their personal codes or turn on Stranger Messaging
+           </p>
+
+           <div class="imgcontainer ">
+            <div class="personalcode rounded-border col-12">
+                <p class="blue-font">
+                    Your Personal Code
+               </p>
+               <div class="crow">
+            
+                   <div style="width:100%">
+                   <strong data-id="673734asas" id="personal_code">673734asas</strong> 
+                   <button class="btn btn-white" id="personal_code_copy_button" style="float:right">
+                   <img src="./img/copyButton.png" /></button>
+            
+            
+            </div>
+             </div>
+             </div>
+             <br />
+             <br /> 
+            
+
+             <div class="imgcontainer  ">
+                <div class=" rounded-border col-12">
+                    <p class="blue-font">
+                        Personal Code
+                   </p>
+                
+                       <input type="text" name="callee_personal_code" id="callee_personal_code" class="form-control rounded-border 
+                       bform-control col-12 " />
+                   
+                </div>
+                 </div>
+                 <br />
+                 <div class="crow">
+                   
+                    <div class="col-5">
+                        <button class="btn btn-white  rounded-border  col-12" id="personalCodeChatButton"><i class="bi bi-chat">  </i> &nbsp;&nbsp; Chat</button>
+                    </div>
+                    <div class="col-5">
+                        <button class="btn btn-white  rounded-border  col-12 orange" id="personalCodeVideoButton">
+                        <img class="videobutton" src="./img/videoButton.png" /> 
+                        </button>
+                    </div>
+                 </div>
+                 <br /><br />
+                 <p class="blue-font">
+                   Stranger
+               </p>
+                 <div class="crow">
+                    
+                    <div class="col-5">
+                        <button class="btn btn-white  rounded-border col-12"><i class="bi bi-chat">  </i> &nbsp;&nbsp; Chat</button>
+                    </div>
+                    <div class="col-5">
+                        <button class="btn btn-white  rounded-border col-12 orange nowrap">
+                            <img class="videobutton" src="./img/videoButton.png" /> 
+                        </button>
+                    </div>
+                 </div>
+                 <div class=" checkbox_container f-row ">
+                     <div class="form-group">
+                         
+                        <input type="checkbox" id="connection_checkbox" class="checkinput ">
+                     </div>
+                 
+                 <p class="checkbox_container_paragraph">  
+                    Allow Connections from Strangers
+                </p>
+            </div>
+                <span class="clearfix"></span>
+
+            </section>
+      
+     
+       <section class="crow" id="video_frame">
+           <div class="videos_container">
+                   <!-- Video Controllers -->
+           <div class="video_recording_bottom" id="video_recording_bottom">
+            <button class="recording_button_small" id="pause_recording_button">
+                <img src="./img/pause.png"  />
+            </button>
+            <button class="recording_button_small" id="resume_recording_button">
+                <img src="./img/resume.png"  />
+            </button>
+            <button class=" btn_stop_recording" id="stop_recording_button">
+                Stop Recording
+            </button>
+           </div>
+           <!-- Bottom Buttons -->
+           <div class="video_placeholder" id="video_placeholder">
+
+           </div>
+           <video class="remote_video" autoplay id="remote_video"></video>   
+           <!-- Local Video Preview--> 
+           <div class="local_preview_box" id="local_preview_box">
+               <video class="local_video" autoplay id="local_video"></video>
+           </div>
+       
+           <div class="call_button_container " id="call_buttons">
+               <button class="call_button_small" id="mic_button">
+                   <img src="./img/mic.png" id="mic_button_image" />
+               </button>
+               <button class="call_button_small" id="camera_button">
+                <img src="./img/camera.png" id="camera_button_image" />
+            </button>
+            <button class="call_button_small" id="hung_up_button">
+                <img src="./img/hangUp.png"  />
+            </button>
+            <button class="call_button_small" id="screen_share_button">
+                <img src="./img/switchCameraScreenSharing.png"  />
+            </button>
+            <button class="call_button_small" id="start_recording_button">
+                <img src="./img/recordingStart.png" />
+            </button>
+           </div>
+
+           <div class="end_chat_button_container hide" id="end_chat_button_container">
+            <button class="call_button_small" id="hung_up_button">
+                <img src="./img/hangUp.png"  />
+            </button>
+           </div>
+         
+        </div>
+    </section>
+    <div  id="chat_area">
+          <div class="message_container" id="message_container"></div>
+          <div class="new_message_container" id ="new_message_container">
+            <input type="text" id="new_message_input" class="new_message_input form-control" placeholder="Type your chat here!" />
+            <button class="new_message_button" id="new_message_button">
+                <img src="./img/sendMessageButton.png" class="send_new_message_button_image" />
+            </button>
+          </div>
+    </div>
+</section>
+<div id="dialog"></div>
+
+        <script src="/socket.io/socket.io.js" ></script>
+        <script src="/js/bootstrap.min.js"></script>
+        <script src="./js/constants.js" type='module'></script>
+        <script src="./js/store.js" type='module'></script>
+        <script src="./js/ui.js" type='module'></script>
+        <script src="./js/wss.js" type='module'></script>
+        <script src="./js/webRTCHandler.js" type='module'></script>
+        <script src="./js/main.js" type='module'></script>
+    </body>
+</html>
