@@ -9,21 +9,22 @@
     <body>
         <section class="blue appcontainer">
        
-            
+        
             <section class="sectionview " id="blue">
-                
-                <div class="stateblur hide"></div>
+                <div id="dashboard_blur" class="display_none"></div>
+                <div class="blue_boxed">
+               
                 <div class="imgcontainer f-row justify-content-center" style="">
                     <img src="/utils/images/logo.png"/>
                 </div>
-                <br />
+             
                 <br />
       
            <p class="blue-font">
                 Chat with others users by pasting their personal codes or turn on Stranger Messaging
            </p>
 
-           <div class="imgcontainer ">
+           <div class="call_socket_info ">
             <div class="personalcode rounded-border col-12">
                 <p class="blue-font">
                     Your Personal Code
@@ -40,10 +41,10 @@
              </div>
              </div>
              <br />
-             <br /> 
+       
             
 
-             <div class="imgcontainer  ">
+             <div class="call_socket_info  ">
                 <div class=" rounded-border col-12">
                     <p class="blue-font">
                         Personal Code
@@ -66,7 +67,7 @@
                         </button>
                     </div>
                  </div>
-                 <br /><br />
+                 <br />
                  <p class="blue-font">
                    Stranger
                </p>
@@ -92,7 +93,7 @@
                 </p>
             </div>
                 <span class="clearfix"></span>
-
+            </div>
             </section>
       
      
@@ -120,7 +121,7 @@
                <video class="local_video" autoplay id="local_video"></video>
            </div>
        
-           <div class="call_button_container " id="call_buttons">
+           <div class="call_button_container display_none" id="call_button_container">
                <button class="call_button_small" id="mic_button">
                    <img src="./img/mic.png" id="mic_button_image" />
                </button>
@@ -138,8 +139,8 @@
             </button>
            </div>
 
-           <div class="end_chat_button_container hide" id="end_chat_button_container">
-            <button class="call_button_small" id="hung_up_button">
+           <div class="finish_chat_button_container display_none" id="finish_chat_button_container">
+            <button class="call_button_small" id="hung_up_button" title="End Chat">
                 <img src="./img/hangUp.png"  />
             </button>
            </div>
@@ -148,7 +149,7 @@
     </section>
     <div  id="chat_area">
           <div class="message_container" id="message_container"></div>
-          <div class="new_message_container" id ="new_message_container">
+          <div class="new_message_container display_none" id ="new_message_container">
             <input type="text" id="new_message_input" class="new_message_input form-control" placeholder="Type your chat here!" />
             <button class="new_message_button" id="new_message_button">
                 <img src="./img/sendMessageButton.png" class="send_new_message_button_image" />

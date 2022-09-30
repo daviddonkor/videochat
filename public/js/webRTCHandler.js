@@ -44,10 +44,11 @@ export const handlePreOffer = (data) => {
 const acceptCallHandler = () => {
     console.log("Call Accepted");
     sendPreOfferAnswer(constants.preOfferAnswer.CALL_ACCEPTED);
+    ui.showCallElements(connectedUserDetails.callType);
 }
 
 const rejectCallHandler = () => {
-    console.log("Call Accepted");
+    console.log("Call Rejected");
     sendPreOfferAnswer(constants.preOfferAnswer.CALL_REJECTED);
 }
 
@@ -60,5 +61,37 @@ const sendPreOfferAnswer =  (preOfferAnswer) => {
         callerSocketId: connectedUserDetails.socketId,
         preOfferAnswer
     }
+    ui.removeAllDialogs();
     wss.sendPreOfferAnswer(data);
+}
+
+export const handlePreOfferAnswer = (data) => {
+    const { preOfferAnswer } = data;
+    console.log("Pre Offer Answer Came");
+    console.log(data);
+    ui.removeAllDialogs();
+    if( preOfferAnswer === constants.preOfferAnswer.CALLEE_NOT_FOUND)
+    {
+        ui.showInfoDialog(preOfferAnswer)
+        //Show Dialog that callee has not been found
+    }
+
+    if( preOfferAnswer === constants.preOfferAnswer.CALL_UNAVAILABLE)
+    {
+        ui.showInfoDialog(preOfferAnswer)
+        //Show Dialog that callee has not been found
+    }
+
+    if( preOfferAnswer === constants.preOfferAnswer.CALL_REJECTED)
+    {
+        ui.showInfoDialog(preOfferAnswer)
+        //Show Dialog that callee has rejected the call
+    }
+
+    if( preOfferAnswer === constants.preOfferAnswer.CALL_ACCEPTED)
+    {
+        // Send WebRTC Offer
+        ui.showCallElements(connectedUserDetails.callType);
+    }
+
 }

@@ -19,6 +19,12 @@ export const registerSocketEvents = (socket)=>{
         console.log(data)
         webRTCHandler.handlePreOffer(data)
     });
+
+    // Handles the pre offer answer
+    socket.on('pre-offer-answer', (data) =>{
+
+        webRTCHandler.handlePreOfferAnswer(data);
+    });
 };
 
 export const sendPreOffer = (data) => {

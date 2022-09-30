@@ -43,13 +43,17 @@ io.on("connection",(socket)=>{
 
         //console.log(connectedPeer);
         if(connectedPeer){
-            console.log("Peer found on the server.")
             const data = {
                 callerSocketId: socket.id,
                 callType,
             };
 
         io.to(calleePersonalCode).emit("pre-offer", data);
+        }else{
+            const data = {
+                preOfferAnswer:'CALLEE_NOT_FOUND'
+            }
+            io.to(socket.id).emit("pre-offer-answer",data);
         }
 
     });
@@ -68,8 +72,17 @@ io.on("connection",(socket)=>{
 
    //Listen to pre-offer-answer
    socket.on("pre-offer-answer", (data) => {
-    console.log("pre offer answer came")
-    console.log($data);
+
+    const { callerSocketId } = data;
+    const connectedPeer = connectedPeers.find((peerSocketId) => {
+        return  peerSocketId === callerSocketId;
+   });
+
+   if(connectedPeer) {
+    io.to(callerSocketId).emit("pre-offer-answer",data);
+
+   }
+
    });
 });
 
